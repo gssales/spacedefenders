@@ -1,5 +1,12 @@
 import {SpriteSheet} from "../res/sprite.js"
 
+export function loadLevels(n) {
+	var l = []
+	for (let i = 1; i < n+1; i++)
+		l.push(loadJSON('js/assets/lvl-'+i+'.json'))
+	return l
+}
+
 // Função loadSpriteSheet
 // Carrega imagem e armazena em um SpriteSheet.
 export function loadSpriteSheet(url, w, h) {

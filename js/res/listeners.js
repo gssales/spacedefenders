@@ -66,10 +66,18 @@ export class kbListener {
 						this.keys.SpaceBar = false;
 					else
 						this.keys[event.key] = false;
-					this.keys.none = true;
+					this.keys.none = this.isNone();
 				}
 			}
 		return this.keys;
+	}
+
+	static isNone() {
+		var n = false
+		for (let key in this.keys) {
+			n = n || this.keys[key]
+		}
+		return !n
 	}
 }
 

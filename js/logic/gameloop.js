@@ -27,7 +27,11 @@ export function gameloop(load, update, draw) {
         requestAnimationFrame(mainloop)
     }
 
-    load();
-    mainloop(0);
+	new Promise((resolve, reject) => {
+		load(resolve)
+	})
+	.then((responses) => {
+		mainloop(0)
+	})
 
 }
