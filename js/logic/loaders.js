@@ -54,7 +54,7 @@ export function loadJSON(url) {
 				resolve(JSON.parse(str));
 			}
 		}
-		xobj.open("POST", url, true);
+		xobj.open("GET", url, true);
 		xobj.send(null);
 	});
 }
